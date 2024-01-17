@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google Tag Manager -->
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-TCNC95P');
+		</script>
+	<!-- End Google Tag Manager -->
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		if(localStorage.getItem('auth')) {
+			var auth = JSON.parse(localStorage.getItem('auth')) || null;
+			if (auth) {
+				dataLayer.push({
+					'First Name': auth.user.first_name,
+					'Last Name': auth.user.last_name,
+					'email': auth.user.email,
+					'Role': auth.user.role,
+					'Company': auth.user.company.company_name
+				});
+			}
+		}
+		
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- TODO uncomment this when app goes live -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177195934-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-177195934-1');
+	</script> -->
+	<!-- Google Tag Manager -->
+	<!-- <script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-TCNC95P');
+	</script> -->
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://beta.financelobby.com/">
+	<meta property="og:title" content="Finance Lobby - Commercial Real Estate Financing Marketplace">
+	<meta property="og:description" content="Join us at the Lobby, where commercial brokers and lenders meet for hassle-free financing. Sign up now for free access.">
+	<meta property="og:image" content="https://mdash-dev-stage.nyc3.digitaloceanspaces.com/preview.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://beta.financelobby.com/">
+	<meta property="twitter:title" content="Finance Lobby - Commercial Real Estate Financing Marketplace">
+	<meta property="twitter:description" content="Join us at the Lobby, where commercial brokers and lenders meet for hassle-free financing. Sign up now for free access.">
+	<meta property="twitter:image" content="https://mdash-dev-stage.nyc3.digitaloceanspaces.com/preview.jpg">
+
+
+	<!-- End Google Tag Manager -->
+	<meta name="robots" content="noindex,nofollow">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<link rel="icon" href="<%= BASE_URL %>favicon.png">
+<!--	<title><%= htmlWebpackPlugin.options.title %></title>-->
+	<title>Finance Lobby - Meet Your Perfect Deal</title>
+	<meta name="title" content="Finance Lobby - Commercial Real Estate Financing Marketplace">
+	<meta name="description" content="Join us at the Lobby, where commercial brokers and lenders meet for hassle-free financing. Sign up now for free access.">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#055d64">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#055d64">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#055d64">
+	<!-- Clarity -->
+	<!-- TODO uncomment this when app goes live -->
+	<!-- <script type="text/javascript">
+		(function (c, l, a, r, i, t, y) {
+			c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+			t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+		})(window, document, "clarity", "script", "59nxwvy61q");
+	</script> -->
+	<!-- End of Clarity -->
+	<!-- TODO uncomment this when app goes live -->
+	<!-- Hotjar Tracking Code for https://beta.financelobby.com/ -->
+	<script>
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:2986933,hjsv:6};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		
+		//Setting hotjar user attributes
+		if(localStorage.getItem('auth')) {
+			var auth = JSON.parse(localStorage.getItem('auth')) || null;
+			if (auth) {
+				window.hj('identify', null, {
+					'User First Name': auth.user.first_name,
+					'User Last Name': auth.user.last_name,
+					'email': auth.user.email,
+					'Role': auth.user.role,
+					'Company': auth.user.company.company_name
+				});
+			}
+		}
+		
+	</script>
+	<script type="text/javascript">
+		if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+			(function(c,l,a,r,i,t,y){
+				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+			})(window, document, "clarity", "script", "9fts8e54zj");
+		}
+	</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCNC95P"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<noscript>
+	<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+		Please enable it to continue.</strong>
+</noscript>
+<!-- Google Tag Manager (noscript) -->
+<!-- <noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCNC95P" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript> -->
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="app"></div>
+<!-- built files will be auto injected -->
+
+	<!-- TODO uncomment this when app goes live -->
+	<!-- <script type="text/javascript">
+		_linkedin_partner_id = "2903076";
+		window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+		window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+	</script>
+	<script type="text/javascript">
+		(function () {
+			var s = document.getElementsByTagName("script")[0];
+			var b = document.createElement("script");
+			b.type = "text/javascript"; b.async = true;
+			b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+			s.parentNode.insertBefore(b, s);
+		})();
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none;" alt=""
+			src="https://px.ads.linkedin.com/collect/?pid=2903076&fmt=gif" />
+	</noscript> -->
+</body>
+</html>

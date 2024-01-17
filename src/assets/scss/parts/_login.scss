@@ -1,0 +1,140 @@
+/*--------------------------------------------------------------
+## Login part
+--------------------------------------------------------------*/
+.login__holder {
+    display: flex;
+    min-height: calc(100vh - 190px);
+
+    @include mq($lg) {
+        padding: 30px 0;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 201px);
+    }
+
+    @include mq($sm) {
+        min-height: calc(100vh - 263px);
+    }
+}
+
+.login__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mq($lg + 1, min) {
+        width: 50%;
+    }
+}
+
+.login__box--image {
+    @include mq($lg) {
+        display: none;
+    }
+}
+
+.login-block__form {
+    width: 100%;
+    max-width: 440px;
+    padding: 0 15px;
+}
+
+.login-form--title {
+    margin-bottom: 20px;
+
+    @include mq($lap-l) {
+        margin-bottom: 15px;
+    }
+
+    @include mq($sm) {
+        margin-bottom: 10px;
+    }
+}
+
+.login-form__top {
+    @include mq($lap-l) {
+        text-align: center;
+    }
+}
+
+.login-form--text {
+    color: $shark;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.08px;
+    line-height: 21.6px;
+}
+
+.login-form__body {
+    padding: 67px 0 0;
+
+    @include mq($lap-xxl) {
+        padding: 30px 0 0;
+    }
+
+    @include mq($lg) {
+        padding: 30px 0 0;
+    }
+}
+
+.login-form-submit-btn {
+    width: 100%;
+    position: relative;
+}
+
+.login-form__fp {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 26px;
+
+    @include mq($sm) {
+        margin-bottom: 15px;
+    }
+}
+
+.login-form__signup {
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: $shark;
+
+    a {
+        color: $mosque;
+        transition: $dur $ease;
+        font-weight: 700;
+
+        @include hover {
+            opacity: 0.9;
+            color: $yellow-orange;
+        }
+    }
+
+    @include mq($lap-l) {
+        text-align: center;
+    }
+
+    @include mq($sm) {
+        font-size: 15px;
+    }
+}
+
+.login-form--submit {
+    padding-top: 10px;
+    margin-bottom: 64px;
+    position: relative;
+
+    @include mq($lap-l) {
+        margin-bottom: 35px;
+    }
+
+    @include mq($lg) {
+        padding-top: 15px;
+    }
+}
+
+.forget-pass--form {
+    .login-form-body {
+        padding-top: 40px;
+    }
+}

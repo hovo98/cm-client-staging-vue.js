@@ -1,0 +1,46 @@
+name: Deployment to Production
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  vueBackendUrl: "https://admin.financelobby.com/"
+  landingPageUrl: "/sign-up/lender"
+
+jobs:
+  build:
+    name: Build, push, and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+
+      - name: Build container image
+        run: docker build --build-arg VUE_APP_BACKEND_URL="${{ env.vueBackendUrl }}" --build-arg VUE_APP_GOOGLE_MAPS_KEY="${{ secrets.VUE_APP_GOOGLE_MAPS_KEY }}" --build-arg VUE_APP_RECAPTCHA_SITE_KEY="${{ secrets.VUE_APP_RECAPTCHA_SITE_KEY }}" --build-arg VUE_APP_LANDING_PAGE_URL="${{ env.landingPageUrl }}" -t registry.digitalocean.com/cm-container-registry/cm-fe:$(echo $GITHUB_SHA | head -c7) .
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 600
+
+      - name: Push image to DigitalOcean Container Registry
+        run: docker push registry.digitalocean.com/cm-container-registry/cm-fe
+
+      - name: Update deployment file
+        run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|registry.digitalocean.com/cm-container-registry/cm-fe:'${TAG}'|' $GITHUB_WORKSPACE/.do/k8s/deployment.yml && sed -i 's|<COMMIT>|'${TAG}'|' $GITHUB_WORKSPACE/.do/k8s/deployment.yml
+
+      - name: Save DigitalOcean kubeconfig with short-lived credentials
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-1-19-3-do-2-nyc1-1609152820429
+
+      - name: Deploy to DigitalOcean Kubernetes
+        run: kubectl apply -f $GITHUB_WORKSPACE/.do/k8s/deployment.yml
+
+      - name: Verify deployment
+        run: kubectl rollout status deployment/cm-fe
+        timeout-minutes: 2

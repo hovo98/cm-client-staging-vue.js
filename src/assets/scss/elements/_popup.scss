@@ -1,0 +1,172 @@
+.popup__wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba($white, .9);
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    box-shadow: 0 2px 20px rgba($black, 0.05);
+}
+
+.popup {
+    @include center;
+    z-index: 3;
+    border-radius: 4px;
+    background-color: $white;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, .1);
+    padding: 55px 75px 50px 30px;
+    width: 100%;
+    max-width: 495px;
+
+    @include mq($md) {
+        max-width: 100%;
+        padding: 40px 30px;
+    }
+
+    @include mq($sm) {
+        padding: 40px 25px 20px;
+    }
+
+    @include mq(450px) {
+        width: 100%;
+    }
+
+
+    .entry-content {
+        margin-bottom: 24px;
+
+        @include mq($sm) {
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: $shark;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: $font-main;
+            margin-bottom: 28px;
+
+            @include mq($md) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.popup__close {
+    position: absolute;
+    top: 27px;
+    right: 26px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: $dur $ease;
+
+    @include mq($md) {
+        top: 15px;
+        right: 15px;
+    }
+
+    &:hover {
+        &::before,
+        &::after {
+            transition: $dur $ease;
+            transform: translate(-50%, -50%) rotate(0);
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        height: 2px;
+        width: 21px;
+        background-color: $santas-gray;
+        @include center;
+        transition: $dur $ease;
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+.popup__btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(450px) {
+        // justify-content: center;
+        flex-wrap: wrap;
+        // flex-direction: column;
+    }
+
+    .btn {
+        border: 1px solid;
+        
+        @include mq($md) {
+            min-width: 120px;
+            padding: 9px 25px;
+            margin: 0 10px 10px;
+        }
+
+        &:not(.disabled) {
+            @include hover {
+                color: $shark;
+                border: 1px solid $shark;
+            }
+        }
+
+        @include mq(374px) {
+            margin: 0 0 10px;
+        }
+    }
+
+    .btn--alt {
+        color: $shark;
+        border: 1px solid $shark;
+
+        &:not(.disabled) {
+            @include hover {
+                color: $white;
+                background-color: $mosque;
+                border: 1px solid $mosque;
+            }
+        }
+    }
+}
+
+.popup__btn {
+    // min-height: 58px;
+    margin: 0 15px;
+
+    .btn {
+        padding-left: 33px;
+        padding-right: 33px;
+    }
+
+    @include mq($md) {
+        margin: 0 10px 10px;
+    }
+
+    &:only-child {
+        margin: 0;
+    }
+
+    @include mq($md) {
+        min-height: 44px;
+    }
+}
+
+.popup__btn-holder {
+    .popup__btn {
+        margin: 0;
+    }
+}

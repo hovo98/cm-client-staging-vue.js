@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cm-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+spec:
+  tls:
+    - hosts:
+      - app.financelobby.com
+      - admin.financelobby.com
+      secretName: cm-tls
+  rules:
+    - host: app.financelobby.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cm-fe
+                port:
+                  number: 80
+    - host: admin.financelobby.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cm-be
+                port:
+                  number: 80

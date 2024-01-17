@@ -1,0 +1,83 @@
+/*--------------------------------------------------------------
+## Base Layout
+--------------------------------------------------------------*/
+html, body {
+	@include font-smoothing(antialiased);
+	height: 100%;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	// padding-top: 102px;
+
+	@include mq($xl) {
+		// margin-top: 60px;
+	}
+
+	@include mq($xl + 1, min) {
+		overscroll-behavior-y: none; //sass-lint:disable-line no-misspelled-properties
+	}
+
+	&.sb-show-main {
+		padding: 0;
+	}
+
+	&.menu-opened {
+		overflow: hidden;
+	}
+}
+
+.page-header {
+	margin: 50px 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	word-break: break-word;
+}
+
+.container-wide {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+	
+	@include mq($lg + 1, min) {
+		max-width: calc(100% - 70px);
+	}
+}
+
+.page-basic {
+	padding: 100px 0;
+	min-height: calc(100vh - 187px);
+	
+	@include mq($lap-xxl) {
+		padding: 100px 0 75px;
+	}
+
+	@include mq($lg) {
+		padding: 100px 0 50px;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.grecaptcha-badge {
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+#kommunicate-widget-iframe {
+	bottom: 82px;
+
+	@include mq(1024px) {
+		bottom: 110px;
+	}
+}

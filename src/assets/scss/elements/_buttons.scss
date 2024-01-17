@@ -1,0 +1,248 @@
+/*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+.btn-holder {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-holder--justify-right {
+    justify-content: flex-end;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.08px;
+    text-align: center;
+    border: 2px solid $mosque;
+    background-color: $mosque;
+    border-radius: 6px;
+    color: $white;
+    padding: 15px;
+    outline: none;
+    min-width: 180px;
+    transition: $dur $ease;
+    position: relative;
+    max-height: 100%;
+
+    &:not(.disabled) {
+        @include hover {
+            color: $mosque;
+            background-color: $white;
+
+            + .submit-btn-loader--inline {
+                filter: brightness(0) invert(0);
+            }
+        }
+    }
+
+    @include mq($lap-l) {
+        padding: 10px 20px;
+    }
+
+    @include mq($md) {
+        font-size: 15px;
+        min-width: 160px;
+        padding: 8px 35px;
+    }
+}
+
+.btn--alt {
+    color: $mosque;
+    background-color: $white;
+
+    &:not(.disabled) {
+        @include hover {
+            color: $white;
+            background-color: $mosque;
+        }
+    }
+}
+
+.btn__icon {
+    margin-right: 10px;
+}
+
+.btn--wider {
+    min-width: 240px;
+    max-height: 59px;
+
+    @include mq($md) {
+        min-width: 200px;
+        max-height: 44px;
+    }
+}
+
+.btn--small {
+    font-size: 13px;
+    min-width: 148px;
+    padding: 8px 15px;
+
+    .btn__icon {
+        font-size: 9px;
+        margin-right: 7px;
+    }
+
+    @include mq($md) {
+        min-width: 120px;
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: $santas-gray;
+    border-color: $santas-gray;
+}
+
+.btn-inline {
+    font-size: 14px;
+    color: $mosque;
+    font-weight: 700;
+    letter-spacing: 0.07px;
+    line-height: 1.1;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: $dur $ease;
+
+    @include hover {
+        opacity: 0.9;
+        color: $yellow-orange;
+    }
+}
+
+.btn-direction {
+    font-size: 16px;
+    color: $mosque;
+    font-weight: 700;
+    letter-spacing: 0.08px;
+    line-height: 1.1;
+    position: relative;
+    text-decoration: underline;
+    transition: $dur $ease;
+
+    @include hover {
+        color: #f9ad42;
+
+        &::before {
+            transform: translate(-5px, -50%);
+        }
+    }
+}
+
+.btn-direction--back {
+    padding-left: 25px;
+
+    &::before {
+        content: url("data:image/svg+xml;charset=utf8,%3Csvg%20aria-hidden%3D%22true%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%20class%3D%22svg-inline--fa%20fa-chevron-left%20fa-w-8%20fa-2x%22%3E%0A%20%20%3Cpath%20fill%3D%22%23055d64%22%20d%3D%22M238.475%20475.535l7.071-7.07c4.686-4.686%204.686-12.284%200-16.971L50.053%20256%20245.546%2060.506c4.686-4.686%204.686-12.284%200-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97%200L10.454%20247.515c-4.686%204.686-4.686%2012.284%200%2016.971l211.051%20211.05c4.686%204.686%2012.284%204.686%2016.97-.001z%22%2F%3E%0A%3C%2Fsvg%3E");
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 16px;
+        transition: $dur $ease;
+    }
+}
+
+.submit-btn-holder {
+    position: relative;
+}
+
+.submit-btn-loader {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-125%, -50%);
+    width: 40px;
+    z-index: 1;
+
+    &.submit-btn-loader--inline {
+        width: 30px;
+        transform: translate(5%, -50%);
+        filter: brightness(0) invert(1);
+    }
+
+    @include mq($sm) {
+        filter: brightness(100);
+        left: 4px;
+        width: 28px;
+        transform: translate(0, -50%);
+    }
+}
+
+//links
+.link-holder {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.link-holder--justify-right {
+    justify-content: flex-end;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $mosque;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08px;
+    line-height: 1.35;
+    transition: $dur $ease;
+
+    @include hover {
+        opacity: 0.9;
+        color: $yellow-orange;
+    }
+
+    @include mq($sm) {
+        font-size: 14px;
+    }
+}
+
+.link--sm {
+    font-size: 14px;
+
+    .link__icon {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+}
+
+.link--thin {
+    font-weight: 400;
+    color: $shark;
+
+    .link__icon {
+        font-size: 17px;
+        color: $blue-chill;
+        margin-right: 10px;
+    }
+
+    @include hover {
+        text-decoration: underline;
+        color: $blue-chill;
+    }
+}
+
+.link__icon {
+    margin-right: 14px;
+    font-size: 20px;
+    vertical-align: middle;
+
+    &.link__icon--right {
+        margin-right: 0;
+        margin-left: 14px;
+    }
+}
+
+.link__icon--remove {
+    color: $red;
+}

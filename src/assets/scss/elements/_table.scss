@@ -1,0 +1,907 @@
+// Vue-good-table custom style
+.deals-table {
+
+    @include mq($lg) {
+        min-width: 1000px;
+    }
+
+    .vgt-fixed-header {
+        z-index: 1 !important; //sass-lint:disable-line no-important
+        padding-right: 0;
+        top: -1px;
+        // &.custom-padding {
+        //     padding-right: 15px;
+        // }
+    }
+}
+
+.table-loader {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100px;
+    background-color: rgba($white, .7);
+
+    // @include mq(1024px) {
+    //     position: fixed;
+    // }
+}
+
+.loader {
+    position: absolute;
+    font-size: 17px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.table-sens-cell {
+    position: relative;
+    padding-right: 50px;
+}
+
+.deals-table-wrap {
+    // position: relative;
+
+    @include mq($lg) {
+        overflow-x: auto;
+    }
+}
+
+.broker-deals__table-holder--drafts {
+    .table-head {
+        padding-right: 15px;
+        margin-bottom: 17px !important; //sass-lint:disable-line no-important;
+    }
+
+    .vgt-checkbox-col + td {
+        @include mq(1329px) {
+            min-width: 175px;
+        }
+    }
+
+    .vgt-fixed-header {
+        @include mq(1329px) {
+            display: none;
+        }     
+    }
+}
+
+.lender-quotes__table-holder {
+    .table-head {
+        padding-right: 15px;
+    }
+
+    .deals-table-wrap {
+        &:not(:first-child) {
+            .deals-table--collapse {
+                margin-bottom: 0;
+            }
+
+            .table-head {
+                display: none;
+            }
+        }
+    }
+}
+
+.deals-table--collapse {
+    background-color: $white;
+    padding: 0 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    @include mq($lg) {
+        min-width: 100px;
+    }
+
+    .vgt-row-header {
+        font-weight: 600;
+        color: $shark;
+        font-family: $font-main;
+        font-size: 14px;
+        background-color: $white !important; //sass-lint:disable-line no-important;
+        border: none !important; //sass-lint:disable-line no-important;
+
+        @include mq($sm) {
+            font-size: 13px;
+        }
+
+        .triangle {
+            display: none;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    .cell-title {
+        font-family: $font-main;
+        color: $santas-gray;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        display: block;
+        text-transform: uppercase;
+
+        @include mq($lap-small) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .custom-vgt-table {
+        border-collapse: separate;
+        border-spacing: 0 10px;
+
+        tbody tr:not(:first-child) {
+            background-color: $azure;
+
+            th {
+                @include mq($lap-small) {
+                    padding: 0 5px !important;
+                }
+            }
+
+            td {
+                white-space: nowrap;
+            }
+        }
+
+        tbody {
+            &:hover {
+                cursor: pointer;
+                background-color: $white !important; //sass-lint:disable-line no-important
+                transition: $dur $ease;
+
+                .finish__link {
+                    opacity: 1;
+                    transition: $dur $ease;
+                }
+
+                .battery {
+                    background-color: $athens-gray;
+                    transition: $dur $ease;
+
+                    &::after {
+                        background-color: $athens-gray;
+                        transition: $dur $ease;
+                    }
+                }
+            }
+        }
+
+        thead th,
+        tbody td,
+        th.vgt-checkbox-col {
+            border: none !important; //sass-lint:disable-line no-important;
+        }
+    }
+}
+
+.custom-vgt-table {
+    border: none !important; //sass-lint:disable-line no-important
+
+    thead {
+        th.vgt-checkbox-col {
+            border-right: none;
+            padding: 0 .75em 0 18px;
+        }
+
+        //sass-lint:disable-line no-important
+        th {
+            font-family: $font-main;
+            font-size: 12px;
+            color: $santas-gray !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .06px;
+            background-color: $white;
+            background: none !important;
+            border-bottom: none;
+            padding: 17px 10px;
+            vertical-align: middle !important;
+            text-align: left;
+            padding-left: 25px;
+            white-space: nowrap;
+
+            @include mq($lg) {
+                white-space: nowrap;
+            }
+        }
+
+        th.sorting-asc::after {
+            border-bottom: 5px solid $mosque !important; //sass-lint:disable-line no-important
+        }
+
+        th.sorting-desc::before {
+            border-top: 5px solid $mosque !important; //sass-lint:disable-line no-important
+        }
+    }
+
+    tbody {
+        tr {
+            transition: $dur $ease;
+            background-color: $white;
+            min-height: 85px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #FBF8F3 !important; //sass-lint:disable-line no-important
+                transition: $dur $ease;
+
+                .finish__link {
+                    opacity: 1;
+                    transition: $dur $ease;
+                }
+
+                .battery {
+                    // background-color: $white;
+                    // transition: $dur $ease;
+
+                    // &::after {
+                    //     background-color: $white;
+                    //     transition: $dur $ease;
+                    // }
+                }
+
+                .vgt-checkbox-col {
+                    &::before {
+                        opacity: 1;
+                        transition: .2s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        //sass-lint:disable-line no-important
+        td {
+            font-family: $font-main;
+            height: 85px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $shark !important;
+            letter-spacing: .15px;
+            border-top: 2px solid #f0f7f7;
+            border-bottom: 2px solid #f0f7f7 !important;
+            padding: 6px 20px !important;
+            vertical-align: middle !important;
+            text-align: left;
+            max-width: 420px;
+
+            @include mq(1524px) {
+                padding: 6px 10px !important;
+            }
+
+            @include mq(1400px) {
+                line-height: 1.2;
+                letter-spacing: -0.65px;
+            }
+
+            @include mq($lap-small) {
+                padding: 5px 10px !important;
+            }
+
+            @include mq(1199px) {
+                padding: 5px 19px !important;
+            }
+
+            @include mq(640px) {
+                max-width: 290px;
+            }
+
+            span {
+                display: block;
+                line-height: 1.75;
+            }
+        }
+
+        th.vgt-checkbox-col {
+            background: none;
+            border-right: none;
+            border-top: 2px solid #f0f7f7;
+            border-bottom: 2px solid #f0f7f7;
+            padding: 25px 4px 25px 11px;
+            position: relative;
+
+            &::before {
+                content: '';
+                height: 18px;
+                width: 18px;
+                border: 1px solid transparent;
+                border-radius: 2px;
+                @include center;
+                transform: translate(-29%, -54%);
+                transition: .2s ease-in-out;
+
+                @include mq($lg, min) {
+                    opacity: 0;
+                }
+            }
+
+            &::after {
+                content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-inline--fa fa-check fa-w-14 fa-2x" data-icon="check" data-prefix="fal" viewBox="0 0 448 512" fill="rgb(5, 93, 100)"><path d="M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z"/></svg>');
+                color: $mosque;
+                opacity: 0;
+                background-color: transparent !important; //sass-lint:disable-line no-important
+                width: 8px;
+                height: 8px;
+                font-size: 8px;
+                @include center;
+                transform: translate(0, -50%);
+                transition: .2s ease-in-out;
+            }
+
+            &.active {
+                &::after {
+                    opacity: 1;
+                    transition: .2s ease-in-out;
+                }
+
+                &::before {
+                    opacity: 1;
+                    border: 1px solid $mosque;
+                    transition: .2s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.custom-vgt-table tbody td span, .vgt-right-align {
+    white-space: nowrap;
+}
+
+.page-lender-deals {
+
+
+    .custom-vgt-table tbody td {
+        max-width: 100%;
+    }
+
+    .custom-vgt-table tbody td span, .vgt-right-align {
+        white-space: nowrap;
+    }
+
+    .custom-vgt-table tbody td span {
+        line-height: 1.2;
+    }
+
+    .vgt-left-align:not(:nth-child(2)) {
+        white-space: nowrap;
+    }
+
+    .custom-vgt-table tbody td.vgt-right-align, .custom-vgt-table thead th.vgt-right-align {
+        text-align: right;
+        
+        @include mq(1199px) {
+            text-align: left;
+        }
+    }
+
+    // @include mq(1200px, min) {
+    //     padding-left: 85px;
+    //     .lender-deals__table-holder .side-table {
+    //         flex: 0 0 74.1%;
+    //         max-width: 74.1%;
+    //         padding: 0 5px 0 15px;
+    //     }
+    
+    //     .lender-deals__table-holder .side-map {
+    //         flex: 0 0 25.9%;
+    //         max-width: 25.9%;
+    //         padding: 0 15px 0 5px;
+    //     }
+    // }
+
+    @include mq(1400px, min) {
+        .lender-deals__table-holder .side-table {
+            flex: 0 0 75%;
+            max-width: 75%;
+            padding: 0 5 0 15px;
+        }
+    
+        .lender-deals__table-holder .side-map {
+            flex: 0 0 25%;
+            max-width: 25;
+            padding: 0 5px 0 15px;
+        }
+    }
+}
+
+.deals-table-wrap--no-data .custom-vgt-table tbody td .vgt-text-disabled {
+    min-height: 434px;
+}
+
+.custom-vgt-table .table-sens-cell {
+    max-width: 190px;
+}
+
+// table no results icon
+.vgt-center-align.vgt-text-disabled {
+    min-height: 400px;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include mq($lg) {
+        min-height: 300px;
+    }
+
+    @include mq(1024px) {
+        width: 690px;
+    }
+
+    @include mq(767px) {
+        width: 510px;
+    }
+
+    @include mq(575px) {
+        width: calc(100vw - 57px);
+    }
+
+    &::before {
+        content: '';
+        position: relative;
+        display: block;
+        width: 150px;
+        height: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('assets/images/placeholders/no_data_placeholder.png');
+        margin-bottom: 50px;
+
+        @include mq($lg) {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &::after {
+        content: 'No results - please try a different search';
+        font-family: $font-second;
+        font-size: 25px;
+        line-height: 1.2;
+        color: $shark;
+        text-align: center;
+        position: relative;
+        display: block;
+        width: 100%;
+
+        @include mq($lg) {
+            font-size: 20px;
+        }
+    }
+}
+
+.broker-quotes.page-no-data .vgt-center-align.vgt-text-disabled::after {
+    display: none;
+}
+
+.deals-table-wrap--no-data {
+    .vgt-center-align.vgt-text-disabled {
+         &::after {
+            display: none;
+        }
+    }
+}
+
+// Styles for quote table when there's no data
+.broker-quotes.page-no-data {
+    .deals-table {
+        min-width: 100%;
+    }
+
+    .side-table {
+        min-height: auto;
+    }
+
+    .broker-quotes__no-data {
+        bottom: 40px;
+    }
+}
+
+.broker-quotes.page-no-data .vgt-fixed-header,
+.broker-quotes.page-no-data .custom-vgt-table > thead {
+    display: none;
+}
+
+//INDIVIDUAL QUOTE BROKER
+
+.custom-table-broker {
+    width: 100%;
+    border: 2px solid $azure;
+
+    thead {
+
+        th {
+            padding: 6px 31px;
+            text-align: left;
+            border-right: 2px solid $azure;
+
+            // &:last-child {
+            //     padding-right: 0;
+            // }
+
+            span {
+                font-size: 12px;
+                font-family: $font-main;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $mosque;
+            }
+
+            @include mq(670px) {
+                padding: 6px 0px;
+                text-align: center;
+            }
+        }
+    }
+
+    tbody {
+
+        td {
+            border-top: 2px solid $azure;
+            border-bottom: 2px solid $azure;
+            border-right: 2px solid $azure;
+            padding: 5px 31px 7px;
+            vertical-align: middle;
+
+            &:last-child {
+                padding-right: 0;
+
+                @include mq(670px) {
+                    padding: 3px 40px 3px 20px;
+                }
+            }
+
+            span {
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 700;
+                white-space: nowrap;
+
+                @include mq(500px) {
+                    font-size: 13px;
+                }
+            }
+
+            @include mq(670px) {
+                padding: 3px 40px 3px 20px;
+            }
+        }
+    }
+}
+
+//INDIVIDUAL DEAL LENDER
+
+.custom-table-individual-deal {
+    border: 2px solid $azure !important; //sass-lint:disable-line no-important
+
+    .colored-cell {
+        background-color: $azure;
+    }
+
+    thead {
+
+        th {
+            padding: 12px 19px;
+            text-align: left;
+            border-right: 2px solid $azure;
+            background: $white !important; //sass-lint:disable-line no-important
+            white-space: nowrap;
+
+            // &:last-child {
+            //     padding-right: 0;
+            // }
+
+            span {
+                position: relative;
+                font-size: 12px;
+                font-family: $font-main;
+                font-weight: 600;
+                letter-spacing: 0.06px;
+                line-height: 21.6px;
+                color: $santas-gray;
+                text-transform: capitalize;
+            }
+
+            &:last-child {
+                span {
+                    &::after,
+                    &::before {
+                        display: none !important; //sass-lint:disable-line no-important
+                    }
+                }
+            }
+        }
+    }
+
+    tbody {
+
+        td {
+            border-top: 2px solid $azure;
+            border-bottom: 2px solid $azure;
+            border-right: 2px solid $azure;
+            padding: 14px 19px !important; //sass-lint:disable-line no-important
+            white-space: nowrap;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            span {
+                text-transform: capitalize;
+                font-size: 14px;
+                font-weight: 600;
+                color: $shark;
+                white-space: nowrap;
+
+                a {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        color: $yellow-orange !important; //sass-lint:disable-line no-important
+                    }
+
+                    @include mq(500px) {
+                        font-size: 13px !important; //sass-lint:disable-line no-important
+                    }
+                }
+
+                @include mq(500px) {
+                    font-size: 13px;
+                }
+            }
+
+            a {
+                transition: $dur $ease;
+
+                &:hover {
+                    color: $yellow-orange !important; //sass-lint:disable-line no-important
+                }
+            }
+        }
+    }
+}
+
+//INDIVIDUAL DEAL BROKER
+
+.custom-table-individual-deal-broker {
+
+    .broker-sub-table {
+        tr {
+            &:last-child {
+                td {
+                    border-bottom: none !important;
+                }
+            }
+        }
+    }
+
+    thead {
+        th.vgt-checkbox-col {
+            padding: 0 24px;
+            border-right: 2px solid #f0f7f7;
+
+            input {
+                display: none;
+            }
+        }
+
+        th {
+            font-family: $font-main;
+            font-size: 12px;
+            color: $santas-gray !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .06px;
+            background-color: $white;
+            background: none !important;
+            border-bottom: none;
+            padding: 12px 28px;
+
+            @include mq(500px) {
+                padding: 12px 15px;
+            }
+        }
+
+        th.sorting-asc::after {
+            border-bottom: 5px solid $mosque !important;
+        }
+
+        th.sorting-desc::before {
+            border-top: 5px solid $mosque !important;
+        }
+    }
+
+    tbody {
+        tr {
+            transition: $dur $ease;
+            background-color: $white;
+            height: 52px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $fantasy !important;
+                transition: $dur $ease;
+
+                td {
+                    background-color: $fantasy !important;
+                    transition: $dur $ease;
+                }
+
+                .broker-sub-table {
+                    td {
+                        border-color: $fantasy !important;
+                    }
+                }
+
+                .battery {
+                    background-color: $white;
+                    transition: $dur $ease;
+
+                    &::after {
+                        background-color: $white;
+                        transition: $dur $ease;
+                    }
+                }
+
+                .vgt-checkbox-col {
+                    &::before {
+                        opacity: 1;
+                        transition: .2s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        td {
+            font-family: $font-main;
+            font-size: 14px;
+            font-weight: 600;
+            color: $shark !important;
+            letter-spacing: .15px;
+            border-top: 2px solid #f0f7f7;
+            border-bottom: 2px solid #f0f7f7 !important;
+            vertical-align: middle !important;
+            padding: 14px 10px !important;
+
+            // &:nth-child(2),
+            // &:last-child,
+            &:first-child span {
+                padding: 14px 18px !important;
+            }
+
+            span {
+                display: block;
+                line-height: 1.75;
+            }
+        }
+
+        th.vgt-checkbox-col {
+            background: none;
+            border-top: 2px solid #f0f7f7;
+            border-bottom: 2px solid #f0f7f7;
+            border-right: 2px solid #f0f7f7;
+            padding: 25px 4px 25px 11px;
+            position: relative;
+
+            input {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                height: 14px;
+                width: 14px;
+                border: 1px solid $santas-gray;
+                border-radius: 2px;
+                @include center;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: .2s ease-in-out;
+            }
+
+            &::after {
+                content: url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-inline--fa fa-check fa-w-14 fa-2x" data-icon="check" data-prefix="fal" viewBox="0 0 448 512" fill="rgb(5, 93, 100)"><path d="M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z"/></svg>');
+                color: $mosque;
+                opacity: 0;
+                background-color: transparent !important; //sass-lint:disable-line no-important
+                width: 8px;
+                height: 8px;
+                font-size: 8px;
+                @include center;
+                transform: translate(-50%, -50%);
+                transition: .2s ease-in-out;
+            }
+
+            &.active {
+                &::after {
+                    opacity: 1;
+                    transition: .2s ease-in-out;
+                }
+
+                &::before {
+                    opacity: 1;
+                    border: 1px solid $mosque;
+                    transition: .2s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.accordion-wrapper--table .custom-table-individual-deal-broker tbody td {
+    padding: 14px 28px !important;
+
+    @include mq(640px) {
+        padding: 14px 10px !important;
+    }
+}
+
+.custom-table-individual-deal .vgt-right-align {
+    text-align: left;
+}
+
+.vgt-table th.sortable:before, .vgt-table th.sortable:after {
+    left: 10px;
+    right: auto;
+}
+
+.custom-table-individual-deal th.sortable:before, .custom-table-individual-deal th.sortable:after {
+    left: 10px;
+    left: auto;
+}
+
+.table-column__sorting {
+    cursor: pointer;
+    position: relative;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: 50%;
+        left: -20px;
+    }
+
+
+    &::after {
+        margin-top: -7px;
+        border-bottom: 5px solid #cfd3e0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+
+    &::before {
+        right: 6px;
+        top: 50%;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #cfd3e0;
+    }
+
+    &.asc {
+        &::after {
+            border-bottom: 5px solid $mosque;
+        }
+    }
+
+    &.desc {
+        &::before {
+            border-top: 5px solid $mosque; //sass-lint:disable-line no-important
+        }
+    }
+}
+
+.quote-status-text {
+    color: $blue-chill !important;
+}

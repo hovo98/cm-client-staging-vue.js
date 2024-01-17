@@ -1,0 +1,294 @@
+[
+	{
+		"fileName": "ico-archive",
+		"componentName": "Archive"
+	},
+	{
+		"fileName": "ico-arrow-df",
+		"componentName": "ArrowDf"
+	},
+	{
+		"fileName": "ico-arrow-down",
+		"componentName": "ArrowDown"
+	},
+	{
+		"fileName": "ico-arrow-left-alt",
+		"componentName": "ArrowLeftAlt"
+	},
+	{
+		"fileName": "ico-arrow-left",
+		"componentName": "ArrowLeft"
+	},
+	{
+		"fileName": "ico-arrow-ll",
+		"componentName": "ArrowLl"
+	},
+	{
+		"fileName": "ico-arrow-right",
+		"componentName": "ArrowRight"
+	},
+	{
+		"fileName": "ico-arrow-rotate",
+		"componentName": "ArrowRotate"
+	},
+	{
+		"fileName": "ico-arrow-up",
+		"componentName": "ArrowUp"
+	},
+	{
+		"fileName": "ico-arrow",
+		"componentName": "Arrow"
+	},
+	{
+		"fileName": "ico-ban-solid",
+		"componentName": "BanSolid"
+	},
+	{
+		"fileName": "ico-bell",
+		"componentName": "Bell"
+	},
+	{
+		"fileName": "ico-calendar",
+		"componentName": "Calendar"
+	},
+	{
+		"fileName": "ico-camera",
+		"componentName": "Camera"
+	},
+	{
+		"fileName": "ico-check-circle",
+		"componentName": "CheckCircle"
+	},
+	{
+		"fileName": "ico-check",
+		"componentName": "Check"
+	},
+	{
+		"fileName": "ico-chevron-down",
+		"componentName": "ChevronDown"
+	},
+	{
+		"fileName": "ico-close-circle",
+		"componentName": "CloseCircle"
+	},
+	{
+		"fileName": "ico-close-thin",
+		"componentName": "CloseThin"
+	},
+	{
+		"fileName": "ico-close",
+		"componentName": "Close"
+	},
+	{
+		"fileName": "ico-cog",
+		"componentName": "Cog"
+	},
+	{
+		"fileName": "ico-comm-cl",
+		"componentName": "CommCl"
+	},
+	{
+		"fileName": "ico-dashboard",
+		"componentName": "Dashboard"
+	},
+	{
+		"fileName": "ico-desktop",
+		"componentName": "Desktop"
+	},
+	{
+		"fileName": "ico-dots-three",
+		"componentName": "DotsThree"
+	},
+	{
+		"fileName": "ico-dots",
+		"componentName": "Dots"
+	},
+	{
+		"fileName": "ico-download",
+		"componentName": "Download"
+	},
+	{
+		"fileName": "ico-edit",
+		"componentName": "Edit"
+	},
+	{
+		"fileName": "ico-envelope-solid",
+		"componentName": "EnvelopeSolid"
+	},
+	{
+		"fileName": "ico-envelope",
+		"componentName": "Envelope"
+	},
+	{
+		"fileName": "ico-eraser",
+		"componentName": "Eraser"
+	},
+	{
+		"fileName": "ico-exclamation",
+		"componentName": "Exclamation"
+	},
+	{
+		"fileName": "ico-external",
+		"componentName": "External"
+	},
+	{
+		"fileName": "ico-eye",
+		"componentName": "Eye"
+	},
+	{
+		"fileName": "ico-eyeslash",
+		"componentName": "Eyeslash"
+	},
+	{
+		"fileName": "ico-file",
+		"componentName": "File"
+	},
+	{
+		"fileName": "ico-google-drive",
+		"componentName": "GoogleDrive"
+	},
+	{
+		"fileName": "ico-hand",
+		"componentName": "Hand"
+	},
+	{
+		"fileName": "ico-happy",
+		"componentName": "Happy"
+	},
+	{
+		"fileName": "ico-icon-paper-plane",
+		"componentName": "IconPaperPlane"
+	},
+	{
+		"fileName": "ico-info",
+		"componentName": "Info"
+	},
+	{
+		"fileName": "ico-lines-right",
+		"componentName": "LinesRight"
+	},
+	{
+		"fileName": "ico-lines",
+		"componentName": "Lines"
+	},
+	{
+		"fileName": "ico-list",
+		"componentName": "List"
+	},
+	{
+		"fileName": "ico-location",
+		"componentName": "Location"
+	},
+	{
+		"fileName": "ico-loop",
+		"componentName": "Loop"
+	},
+	{
+		"fileName": "ico-m-table",
+		"componentName": "MTable"
+	},
+	{
+		"fileName": "ico-manage",
+		"componentName": "Manage"
+	},
+	{
+		"fileName": "ico-message-rounded",
+		"componentName": "MessageRounded"
+	},
+	{
+		"fileName": "ico-message",
+		"componentName": "Message"
+	},
+	{
+		"fileName": "ico-minus",
+		"componentName": "Minus"
+	},
+	{
+		"fileName": "ico-note",
+		"componentName": "Note"
+	},
+	{
+		"fileName": "ico-paper-plane",
+		"componentName": "PaperPlane"
+	},
+	{
+		"fileName": "ico-phone",
+		"componentName": "Phone"
+	},
+	{
+		"fileName": "ico-plane-cl",
+		"componentName": "PlaneCl"
+	},
+	{
+		"fileName": "ico-play",
+		"componentName": "Play"
+	},
+	{
+		"fileName": "ico-plus-circle",
+		"componentName": "PlusCircle"
+	},
+	{
+		"fileName": "ico-plus",
+		"componentName": "Plus"
+	},
+	{
+		"fileName": "ico-print",
+		"componentName": "Print"
+	},
+	{
+		"fileName": "ico-question",
+		"componentName": "Question"
+	},
+	{
+		"fileName": "ico-quote-left",
+		"componentName": "QuoteLeft"
+	},
+	{
+		"fileName": "ico-quote-right",
+		"componentName": "QuoteRight"
+	},
+	{
+		"fileName": "ico-reset-pass",
+		"componentName": "ResetPass"
+	},
+	{
+		"fileName": "ico-save-regular",
+		"componentName": "SaveRegular"
+	},
+	{
+		"fileName": "ico-search",
+		"componentName": "Search"
+	},
+	{
+		"fileName": "ico-settings",
+		"componentName": "Settings"
+	},
+	{
+		"fileName": "ico-sign-out",
+		"componentName": "SignOut"
+	},
+	{
+		"fileName": "ico-skip",
+		"componentName": "Skip"
+	},
+	{
+		"fileName": "ico-sliders-h",
+		"componentName": "SlidersH"
+	},
+	{
+		"fileName": "ico-swipe",
+		"componentName": "Swipe"
+	},
+	{
+		"fileName": "ico-table",
+		"componentName": "IconTable"
+	},
+	{
+		"fileName": "ico-trash",
+		"componentName": "Trash"
+	},
+	{
+		"fileName": "ico-user-solid",
+		"componentName": "UserSolid"
+	}
+]

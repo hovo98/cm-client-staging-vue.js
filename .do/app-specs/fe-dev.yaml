@@ -1,0 +1,24 @@
+domains:
+  - domain: dev.64robots.com
+    type: PRIMARY
+name: fe-dev
+region: nyc
+services:
+  - dockerfile_path: Dockerfile
+    envs:
+      - key: VUE_APP_BACKEND_URL
+        scope: RUN_AND_BUILD_TIME
+        value: https://be.dev.64robots.com/
+      - key: VUE_APP_RECAPTCHA_SITE_KEY
+        scope: RUN_AND_BUILD_TIME
+        value: 6LeBy_8ZAAAAAEKV-E4-U1oGkcSJ57iHYDGI79-_
+    github:
+      branch: develop
+      deploy_on_push: true
+      repo: fws-solutions/cm-client
+    http_port: 80
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    name: fe-dev
+    routes:
+      - path: /

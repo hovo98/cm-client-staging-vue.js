@@ -1,0 +1,34 @@
+[
+	{
+		"fileName": "ico-arrow-down",
+		"componentName": "ArrowDown"
+	},
+	{
+		"fileName": "ico-arrow-left",
+		"componentName": "ArrowLeft"
+	},
+	{
+		"fileName": "ico-arrow-right",
+		"componentName": "ArrowRight"
+	},
+	{
+		"fileName": "ico-arrow-up",
+		"componentName": "ArrowUp"
+	},
+	{
+		"fileName": "ico-close",
+		"componentName": "Close"
+	},
+	{
+		"fileName": "ico-happy",
+		"componentName": "Happy"
+	},
+	{
+		"fileName": "ico-quote-left",
+		"componentName": "QuoteLeft"
+	},
+	{
+		"fileName": "ico-quote-right",
+		"componentName": "QuoteRight"
+	}
+]
